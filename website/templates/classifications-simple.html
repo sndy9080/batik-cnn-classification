@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <title>Image Classification Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Gaya dan tampilan -->
+    <link
+      rel="stylesheet"
+      href="/static/pestectionadmin/assets/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/pestectionadmin/assets/css/font-awesome.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/pestectionadmin/assets/css/themify-icons.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/pestectionadmin/assets/css/style.css"
+    />
+  </head>
+
+  <body>
+    <!-- Sidebar -->
+    <aside id="left-panel" class="left-panel">
+      <nav class="navbar navbar-expand-sm navbar-default">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="{{ url_for('main') }}"
+            ><img src="/static/pestectionadmin/images/logo.png" alt="Logo"
+          /></a>
+        </div>
+        <div id="main-menu" class="main-menu collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="{{ url_for('main') }}">
+                <i class="menu-icon fa fa-fort-awesome"></i>CNN Model</a
+              >
+            </li>
+            <li class="active">
+              <a href="{{ url_for('classification') }}">
+                <i class="menu-icon fa fa-image"></i>Image Classification</a
+              >
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </aside>
+
+    <!-- Main content -->
+    <div id="right-panel" class="right-panel">
+      <!-- Header -->
+      <header id="header" class="header">
+        <div class="header-menu">
+          <div class="col-sm-7">
+            <a id="menuToggle" class="menutoggle pull-left"
+              ><i class="fa fa-tasks"></i
+            ></a>
+          </div>
+          <div class="col-sm-5">
+            <div class="user-area dropdown float-right">
+              <img
+                class="user-avatar rounded-circle"
+                src="/static/pestectionadmin/images/admin.jpg"
+                alt="User Avatar"
+              />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <div class="content mt-3">
+        <!-- Form Upload Gambar -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><h4>Input Image</h4></div>
+            <div class="card-body">
+              <form
+                action="/submit"
+                method="post"
+                enctype="multipart/form-data"
+              >
+                <div class="form-group row">
+                  <label for="file" class="col col-md-3 col-form-label"
+                    >File input</label
+                  >
+                  <div class="col-md-9">
+                    <input
+                      type="file"
+                      id="file"
+                      name="file"
+                      class="form-control-file"
+                      required
+                    />
+                  </div>
+                </div>
+                <div class="form-group text-center">
+                  <button type="submit" class="btn btn-primary">Submit</button>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hasil Prediksi -->
+        <div class="col-lg-6">
+          <div class="card">
+            <div class="card-header"><h4>Classification Result</h4></div>
+            <div class="card-body text-center">
+              <!-- Jika ada gambar dan hasil -->
+              {% if img_path and predictioncnn %}
+              <!-- Gambar hasil prediksi -->
+              <img
+                src="{{ img_path }}"
+                alt="Prediction Result"
+                class="img-fluid mb-3"
+                style="max-width: 50%; height: auto"
+              />
+
+              <!-- Nama model aktif (dikirim dari backend Flask) -->
+              <h5><strong>Model:</strong> {{ model_name }}</h5>
+
+              <!-- Prediksi dan Confidence -->
+              <h5><strong>Prediction:</strong> <i>{{ predictioncnn }}</i></h5>
+              <h5><strong>Confidence:</strong> <i>{{ confidencecnn }}</i></h5>
+              {% else %}
+              <p>No image uploaded yet.</p>
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Script JS -->
+    <script src="/static/pestectionadmin/assets/js/jquery.min.js"></script>
+    <script src="/static/pestectionadmin/assets/js/bootstrap.min.js"></script>
+  </body>
+</html>
