@@ -132,43 +132,43 @@ batik-cnn-classification/
 ### System Workflow
 
 <p align="center">
-  <img src="images/System Workflow.png" alt="Batik Classification System Workflow" width="800">
+  <img src="images/System Workflow.png" alt="Batik Classification System Workflow" width="400">
 </p>
 
 ### CNN from Scratch — Loss & Accuracy
 
 <p align="center">
-  <img src="images/Loss and Accuracy Charts for the CNN Model from Scratch.png" alt="CNN from Scratch Loss and Accuracy" width="800">
+  <img src="images/Loss and Accuracy Charts for the CNN Model from Scratch.png" alt="CNN from Scratch Loss and Accuracy" width="400">
 </p>
 
 ### Xception Transfer Learning — Loss & Accuracy
 
 <p align="center">
-  <img src="images/Loss and Accuracy Plots for the Xception Transfer Learning Model.png" alt="Xception Loss and Accuracy" width="800">
+  <img src="images/Loss and Accuracy Plots for the Xception Transfer Learning Model.png" alt="Xception Loss and Accuracy" width="400">
 </p>
 
 ### CNN from Scratch — Evaluation
 
 <p align="center">
-  <img src="images/Evaluation of the confusion matrix, classification report, and prediction error for the CNN Model from Scratch.png" alt="CNN from Scratch Evaluation" width="800">
+  <img src="images/Evaluation of the confusion matrix, classification report, and prediction error for the CNN Model from Scratch.png" alt="CNN from Scratch Evaluation" width="400">
 </p>
 
 ### Xception — Evaluation
 
 <p align="center">
-  <img src="images/Evaluasi confusion matrix, classification report, dan prediksi error pada Model Transfer Learning Xception.png" alt="Xception Evaluation" width="800">
+  <img src="images/Evaluasi confusion matrix, classification report, dan prediksi error pada Model Transfer Learning Xception.png" alt="Xception Evaluation" width="400">
 </p>
 
 ### External Dataset — CNN from Scratch
 
 <p align="center">
-  <img src="images/Prediction results for the external dataset using the CNN model from scratch.png" alt="CNN from Scratch External Prediction Results" width="800">
+  <img src="images/Prediction results for the external dataset using the CNN model from scratch.png" alt="CNN from Scratch External Prediction Results" width="400">
 </p>
 
 ### External Dataset — Xception
 
 <p align="center">
-  <img src="images/Prediction results from the Xception model's external dataset.png" alt="Xception External Prediction Results" width="800">
+  <img src="images/Prediction results from the Xception model's external dataset.png" alt="Xception External Prediction Results" width="400">
 </p>
 
 ### Classification Web Application
