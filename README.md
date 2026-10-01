@@ -36,7 +36,7 @@ The CNN model uses a simple architecture consisting of:
 
 The Xception approach uses a pre-trained **ImageNet** backbone with its main layers frozen, followed by additional layers for classifying the four Batik Keraton categories.
 
-The trained models are then evaluated using accuracy, loss curves, confusion matrices, classification reports, prediction errors, and external images that are outside the training, validation, and test datasets.
+The trained models are evaluated using training and validation curves, confusion matrices, classification reports, prediction error analysis, and external images that are outside the training, validation, and test datasets.
 
 ## 🚀 The Impact / Results
 
@@ -44,14 +44,14 @@ The trained models are then evaluated using accuracy, loss curves, confusion mat
 * Images are standardized to **224 × 224 pixels** and normalized before model training.
 * The CNN-from-scratch experiment uses approximately **90% training, 5% validation, and 5% testing** data.
 * The Xception experiment uses approximately **80% training, 10% validation, and 10% testing** data.
-* Both models successfully learn to classify the four Batik Keraton motifs and are evaluated through training curves, confusion matrices, classification reports, and prediction error analysis.
-* During external image testing, the **CNN from scratch** produced more varied confidence levels and some classification errors, particularly for complex motifs, unusual viewpoints, clothing images, and less ideal lighting conditions.
+* Both models successfully learn to classify the four Batik Keraton motifs and are evaluated using accuracy, loss, confusion matrix, classification report, and prediction error analysis.
+* During external image testing, the **CNN from scratch** produced more varied confidence levels and some classification errors, particularly on complex motifs, unusual viewpoints, clothing images, and less ideal lighting conditions.
 * The **Xception transfer learning model** produced more stable and consistent predictions on the same external images, with many predictions reaching high confidence levels.
 * The project demonstrates how deep learning can support the **digital identification, preservation, education, and promotion of Batik Keraton**.
 
 ## 📂 Repository Structure
 
-The repository contains the trained deep learning models, Jupyter notebooks for experimentation, dataset references, and a web application for image classification.
+The repository contains trained deep learning models, Jupyter notebooks, dataset references, evaluation outputs, and a web application for Batik motif classification.
 
 ```text
 batik-cnn-classification/
@@ -59,6 +59,15 @@ batik-cnn-classification/
 │
 ├── datasets/
 │   └── link_kaggle.txt
+│
+├── images/
+│   ├── System Workflow.png
+│   ├── Loss and Accuracy Charts for the CNN Model from Scratch.png
+│   ├── Loss and Accuracy Plots for the Xception Transfer Learning Model.png
+│   ├── Evaluation of the confusion matrix, classification report, and prediction error for the CNN Model from Scratch.png
+│   ├── Evaluasi confusion matrix, classification report, dan prediksi error pada Model Transfer Learning Xception.png
+│   ├── Prediction results for the external dataset using the CNN model from scratch.png
+│   └── Prediction results from the Xception model's external dataset.png
 │
 ├── models/
 │   ├── scratch_model/
@@ -73,6 +82,8 @@ batik-cnn-classification/
 │   │
 │   └── xception/
 │       └── Percobaan CNN add Models Xception.ipynb
+│
+├── src/
 │
 └── website/
     ├── app.py
@@ -118,31 +129,51 @@ batik-cnn-classification/
 
 ## 📸 Project Gallery
 
-### External Test Images
+### System Workflow
 
-The project includes external Batik images that were not part of the training, validation, or test datasets. These images are used to evaluate how the trained models perform under different real-world conditions.
+<p align="center">
+  <img src="images/System Workflow.png" alt="Batik Classification System Workflow" width="800">
+</p>
 
-### Model Prediction
+### CNN from Scratch — Loss & Accuracy
 
-The classification system produces:
+<p align="center">
+  <img src="images/Loss and Accuracy Charts for the CNN Model from Scratch.png" alt="CNN from Scratch Loss and Accuracy" width="800">
+</p>
 
-* Predicted Batik motif
-* Prediction confidence
-* Classification results for external images
+### Xception Transfer Learning — Loss & Accuracy
 
-### Model Evaluation
+<p align="center">
+  <img src="images/Loss and Accuracy Plots for the Xception Transfer Learning Model.png" alt="Xception Loss and Accuracy" width="800">
+</p>
 
-The project includes evaluation outputs such as:
+### CNN from Scratch — Evaluation
 
-* Training and validation loss
-* Training and validation accuracy
-* Confusion matrix
-* Classification report
-* Prediction error analysis
+<p align="center">
+  <img src="images/Evaluation of the confusion matrix, classification report, and prediction error for the CNN Model from Scratch.png" alt="CNN from Scratch Evaluation" width="800">
+</p>
+
+### Xception — Evaluation
+
+<p align="center">
+  <img src="images/Evaluasi confusion matrix, classification report, dan prediksi error pada Model Transfer Learning Xception.png" alt="Xception Evaluation" width="800">
+</p>
+
+### External Dataset — CNN from Scratch
+
+<p align="center">
+  <img src="images/Prediction results for the external dataset using the CNN model from scratch.png" alt="CNN from Scratch External Prediction Results" width="800">
+</p>
+
+### External Dataset — Xception
+
+<p align="center">
+  <img src="images/Prediction results from the Xception model's external dataset.png" alt="Xception External Prediction Results" width="800">
+</p>
 
 ### Classification Web Application
 
-The `website/` directory contains the web application and HTML templates used to present and perform Batik motif classification.
+The `website/` directory contains the web application and HTML templates used to perform Batik motif classification.
 
 * [Classification Interface](website/templates/classifications.html)
 * [Simple Classification Interface](website/templates/classifications-simple.html)
